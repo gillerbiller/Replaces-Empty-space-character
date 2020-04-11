@@ -1,0 +1,18 @@
+input_str = "Follow your dream."
+
+def replace (input_str):
+    space_list = []
+    for idx in range(len(input_str)):
+        if input_str[idx] == " ":
+            space_list.append(idx)
+
+    offset = 0
+
+    for idx in space_list:
+        pre_space = input_str[:idx+offset]
+        replacement = "%20"
+        post_space = input_str[idx+offset+1:]
+        input_str = pre_space + replacement + post_space
+        offset+=2
+    return input_str
+print(replace(input_str))
